@@ -25,3 +25,10 @@ func TestEnv(t *testing.T) {
 		t.Errorf("LookupEnv: should not have found value, got true")
 	}
 }
+
+func TestArgs(t *testing.T) {
+	ext := depmain.New()
+	if len(ext.Args) < 2 {
+		t.Errorf("expected at least two args, got %v", ext.Args)
+	}
+}
